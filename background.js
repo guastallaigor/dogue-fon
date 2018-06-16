@@ -10,9 +10,10 @@ function init() {
 }
 
 function divImg() {
-  var img = $('<img id="dogue" />')
+  var img = $('<img id="tiu" />')
 
-  img.attr('src', 'https://i.imgur.com/RP6FNap.png')
+  // http://i65.tinypic.com/voc18y.jpg
+  img.attr('src', 'http://i67.tinypic.com/2wbvuyb.png')
   img.css('position', 'absolute')
   img.css('z-index', 0)
   img.css('display', 'none')
@@ -32,26 +33,26 @@ function initTimeMargin() {
 
 function increaseMargin() {
   const body = $('body')
-  const imgDogue = $('#dogue')
+  const imgTiu = $('#tiu')
 
   const marginNowBody = body.css('margin-left').replace('px', '')
   const newMarginBody = parseInt(marginNowBody) + 1
 
-  const marginNowDogue = imgDogue.css('margin-left').replace('px', '')
-  const newMarginDogue = parseInt(marginNowDogue) + 1
+  const marginNowTiu = imgTiu.css('margin-left').replace('px', '')
+  const newMarginTiu = parseInt(marginNowTiu) + 1
 
-  if (newMarginDogue > -250 && newMarginDogue < 1) {
-    return finishWithFon()
+  if (newMarginTiu === 0) {
+    return finish()
   }
 
   body.css('margin-left', newMarginBody + 'px')
-  imgDogue.css('margin-left', newMarginDogue + 'px')
+  imgTiu.css('margin-left', newMarginTiu + 'px')
 
   initTimeMargin()
 }
 
-function getH1() {
-  const h1 = $('<h1>FON</h1>')
+function getTexts() {
+  const h1 = $('<h1>O TIU CHEGO MAUHAUHAUHAU BORA PERDE NO DOTA</h1><h2>AH NÃO, FAZ O TERES AÍ</h2><h3>VOU DE EMBER MID - BF EM 30 MIN</h3>')
 
   h1.css('margin-left', '0')
   h1.css('text-align', 'left')
@@ -60,17 +61,12 @@ function getH1() {
   return h1
 }
 
-function finishWithFon() {
+function finish() {
   const body = $('body')
-  const h1 = getH1()
+  const texts = getTexts()
 
-  body.html(h1)
+  body.html(texts)
 }
-
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-XXXXXXX-X', 'auto');
 ga('send', 'pageview');
